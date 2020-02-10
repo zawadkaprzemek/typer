@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dodaj nową rundę{% endblock %}
+
+{% block body %}
+
+    <div class="page-container" id="newCampaignPage">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>{{ header }}</h3>
+                {{ form_start(form) }}
+
+                {{ form_widget(form.submit, {"attr": {"class": "btn-primary btn"}}) }}
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

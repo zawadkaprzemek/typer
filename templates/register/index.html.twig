@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Zarejestruj się!{% endblock %}
+
+{% block body %}
+    <div class="page-container" id="securityPage">
+        <div class="row">
+            <div class="col-12 col-lg-10">
+                <h3>Rejestracja użytkownika</h3>
+                {{ form_start(form) }}
+                <div class="form-group row">
+                    <div class="col-12 pt-1 col-lg-3 col-form-label">
+                        {{ form_label(form.username) }}
+                    </div>
+                    <div class="col-12 col-lg-9">
+                        {{ form_widget(form.username) }}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-12 pt-1 col-lg-3 col-form-label">
+                        {{ form_label(form.email) }}
+                    </div>
+                    <div class="col-12 col-lg-9">
+                        {{ form_widget(form.email) }}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-12 pt-1 col-lg-3 col-form-label">
+                        {{ form_label(form.firstName) }}
+                    </div>
+                    <div class="col-12 col-lg-9">
+                        {{ form_widget(form.firstName) }}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-12 pt-1 col-lg-3 col-form-label">
+                        {{ form_label(form.lastName) }}
+                    </div>
+                    <div class="col-12 col-lg-9">
+                        {{ form_widget(form.lastName) }}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-12 pt-1 col-lg-3 col-form-label">
+                        {{ form_label(form.plainPassword.first) }}
+                    </div>
+                    <div class="col-12 col-lg-9">
+                        {{ form_widget(form.plainPassword.first) }}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-12 pt-1 col-lg-3 col-form-label">
+                        {{ form_label(form.plainPassword.second) }}
+                    </div>
+                    <div class="col-12 col-lg-9">
+                        {{ form_widget(form.plainPassword.second) }}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-12 pt-1 col-lg-3 col-form-label">
+                        {{ form_label(form.image) }}
+                    </div>
+                    <div class="col-12 col-lg-9">
+                        {{ form_widget(form.image) }}
+                    </div>
+                </div>
+                {#<div class="form-group">
+                    <div class="form-check">
+                        {{ form_errors(form.acceptedTerms) }}
+                        <label for="{{ form.acceptedTerms.vars.id }}">
+                            <input type="checkbox" class="form-check-input" value="{{ form.acceptedTerms.vars.value }}" required="required" id="{{ form.acceptedTerms.vars.id }}" name="{{ form.acceptedTerms.vars.full_name }}">
+                            <a href="#terms" data-toggle="modal" data-target="#modalTermsRegister">{{ form.acceptedTerms.vars.label }}</a>
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>#}
+                {{ form_widget(form._token) }}
+                {{ form_row(form.submit) }}
+                {{ form_end(form,{'render_rest': true}) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+
+            <a href="" class="btn btn-outline-dark">Nowa runda</a>
+            <table class="table table-responsive table-striped">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nazwa</th>
+                    <th>Data zamknięcia</th>
+                    <th>Status</th>
+                    <th>Akcje</th>
+                    <th>Rozliczenie</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for round in rounds %}
+                    <tr>
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.dateEnd }}</td>
+                        <td>{{ user.status.name }}</td>
+                        <td><a class="btn btn-primary">Edytuj</a></td>
+                        <td><a class="btn btn-success">Rozlicz</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

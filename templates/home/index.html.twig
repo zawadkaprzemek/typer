@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Zarejestruj się!{% endblock %}
+
+{% block body %}
+    <div class="page-container" id="homePage">
+        <div class="row">
+            <div class="col-12 col-lg-10">
+                <h3>Witaj {{ user.username }}</h3>
+                <a class="btn btn-primary" href="#">Edytuj profil</a>
+                <a class="btn btn-primary" href="#">Zmiana hasła</a>
+                <a class="btn btn-dark" href="{{ path('app_logout') }}">Wyloguj</a>
+                {% if user.avatar is not null %}
+                    <img src="{{ upload_image_directory }}{{ asset( user.avatar ) }}" class="img-fluid">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
